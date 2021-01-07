@@ -32,8 +32,8 @@ public class ArrowController : MonoBehaviour
         if (collision.gameObject.CompareTag("Obstacles") || collision.gameObject.CompareTag("Arrow"))
         {
             var speed = lastVelocity.magnitude;
-            var direction = Vector3.Reflect(lastVelocity.normalized, collision.contacts[0].normal);       
-            rb.velocity = direction * Mathf.Max(speed, 0f);
+            var direction = Vector3.Reflect(lastVelocity.normalized, collision.contacts[0].normal);
+            rb.velocity = direction * 10f;//Mathf.Max(speed, 0f);
             collision.gameObject.GetComponent<AudioSource>().Play();
 
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
