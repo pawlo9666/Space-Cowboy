@@ -9,8 +9,8 @@ public class VolumeValueChange : MonoBehaviour
     private static readonly string Effect = "Effect";
     public Slider SoundSlider;
     public Slider EffectSlider;
-    private float musicVolume = 0.2f;
-    private float soundEffectVolume = 0.2f;
+    private float musicVolume;
+    private float soundEffectVolume;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +24,11 @@ public class VolumeValueChange : MonoBehaviour
             SoundSlider.value = PlayerPrefs.GetFloat(Sound);
             EffectSlider.value = PlayerPrefs.GetFloat(Effect);
         }
-   
+        else
+        {
+            musicVolume = 0.2f;
+            soundEffectVolume = 0.2f;
+        }
   
     }
 

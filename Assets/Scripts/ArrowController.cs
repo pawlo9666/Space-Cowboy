@@ -7,6 +7,9 @@ public class ArrowController : MonoBehaviour
 {
     private Rigidbody2D rb;
     Vector3 lastVelocity;
+    private float currentLifeTime = 0f;
+    private float LifeTime = 5f;
+    public GameObject explosion;
 
     public void resetLevels()
     {
@@ -14,6 +17,7 @@ public class ArrowController : MonoBehaviour
         PlayerPrefs.SetFloat("Time", TimerController.currentTime);
         ScoreScript.scoreValue = 0;
         TimerController.currentTime = 0f;
+       
     }
     // Start is called before the first frame update
 
@@ -25,6 +29,21 @@ public class ArrowController : MonoBehaviour
     void Update()
     {
         lastVelocity = rb.velocity;
+        currentLifeTime += 1 * Time.deltaTime;
+        if (currentLifeTime >= LifeTime)
+        {
+            Instantiate(explosion, transform.position, transform.rotation);
+            RotateCharacter.bullets--;
+            Destroy(this.gameObject);
+
+            if (RotateCharacter.bullets == 0)
+            {
+                resetLevels();
+                SceneManager.LoadScene("GameOverMenu");
+            }
+        }
+
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

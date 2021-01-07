@@ -37,7 +37,7 @@ public class TargetController : MonoBehaviour
         {
             RotateCharacter.bullets--;
             ScoreScript.scoreValue++;
-            Instantiate(explosion, this.transform.position, transform.rotation = Quaternion.identity);
+            Instantiate(explosion, transform.position, transform.rotation);
 
             if (RotateCharacter.bullets == 0 && ScoreScript.scoreValue % 3 != 0)
             {

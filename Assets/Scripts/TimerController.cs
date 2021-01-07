@@ -17,7 +17,7 @@ public class TimerController : MonoBehaviour
     void Update()
     {
         currentTime += 1 * Time.deltaTime;
-        roundedTime = (float)Math.Floor(Convert.ToDouble(currentTime));
-        timer.text = "Time: " + roundedTime.ToString() + "s"; 
+        //roundedTime = (float)Math.Floor(Convert.ToDouble(currentTime));
+        timer.text = "Time: " + currentTime.ToString("F2") + "s"; 
     }
 }

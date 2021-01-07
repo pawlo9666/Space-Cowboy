@@ -13,7 +13,7 @@ public class MenuTimeInfo : MonoBehaviour
     {
         timer = GetComponent<Text>();
         float currentTime = PlayerPrefs.GetFloat("Time");
-        timer.text = "Time: " + currentTime.ToString();
+        timer.text = "Time: " + currentTime.ToString("F2");
     }
 
 }
