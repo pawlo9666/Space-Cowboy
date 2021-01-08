@@ -4,9 +4,7 @@ using UnityEngine;
 public class SecondAudioSettings : MonoBehaviour
 {
     public AudioSource audioSrc;
-    public AudioSource[] soundEffect;
     private static readonly string Sound = "Sound";
-    private static readonly string Effect = "Effect";
     private float SoundVolume;
     void Awake()
     {

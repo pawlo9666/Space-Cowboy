@@ -7,7 +7,6 @@ public class TimerController : MonoBehaviour
     // Start is called before the first frame update
     public Text timer;
     public static float currentTime = 0f;
-    private float roundedTime = 0f;
     void Start()
     {
         timer = GetComponent<Text>();

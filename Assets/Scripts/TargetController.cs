@@ -7,20 +7,7 @@ public class TargetController : MonoBehaviour
 {
     public GameObject explosion;
     public GameObject bomb;
-    private GameObject older;
     private GameObject kid;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     public void resetLevels()
     {
@@ -58,8 +45,6 @@ public class TargetController : MonoBehaviour
                 PlayerPrefs.SetInt("Score", ScoreScript.scoreValue);
                 PlayerPrefs.SetFloat("Time", TimerController.currentTime);
                 PlayerPrefs.SetInt("Level", next);
-                Debug.Log(PlayerPrefs.GetInt("Level"));
-                Debug.Log(PlayerPrefs.GetFloat("Time"));
 
                 if (next == 6)
                 {
